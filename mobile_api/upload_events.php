@@ -24,13 +24,13 @@ $sql="insert into user_health_event(username,event_type,body_sign,average_stats,
 foreach ($event_array as $event){
 	log_to_file("event date: ".$event->date);
 	$sql=$sql 
-		. "(" . $event->username
-		. "," . $event->event_type
-		. "," . $event->body_sign
+		. "('" . $event->username
+		. "','" . $event->event_type
+		. "','" . $event->body_sign
 		. "," . $event->average_stats
 		. "," . $event->date
 		. "," . $event->duration
-		. "," . $event->evaluation . "),";
+		. "','" . $event->evaluation . "'),";
 }
 
 // cut the charactor at tail
