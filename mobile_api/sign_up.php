@@ -20,18 +20,19 @@ $sql="insert into user_info(username,password,age,gender,political_status,educat
 $stmt=$database->prepare($sql);
 
 // bind data to statement
-$stmt->bind_param("s",$_POST['username']);
-$stmt->bind_param("s",$_POST['password']);
-$stmt->bind_param("i",$_POST['age']);
-$stmt->bind_param("i",$_POST['gender']);
-$stmt->bind_param("i",$_POST['political_status']);
-$stmt->bind_param("i",$_POST['education_status']);
-$stmt->bind_param("i",$_POST['career_status']);
-$stmt->bind_param("i",$_POST['annual_income']);
-$stmt->bind_param("i",$_POST['social_status']);
-$stmt->bind_param("i",$_POST['usage_frequency']);
-$stmt->bind_param("i",$_POST['trust']);
-$stmt->bind_param("i",$_POST['channel']);
+$stmt->bind_param("ssiiiiiiiiii"
+	,$_POST['username']
+	,$_POST['password']
+	,$_POST['age']
+	,$_POST['gender']
+	,$_POST['political_status']
+	,$_POST['education_status']
+	,$_POST['career_status']
+	,$_POST['annual_income']
+	,$_POST['social_status']
+	,$_POST['usage_frequency']
+	,$_POST['trust']
+	,$_POST['channel']);
 
 // execute statement and return
 if(!$stmt->execute()){
