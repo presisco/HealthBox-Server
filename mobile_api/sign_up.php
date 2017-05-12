@@ -10,7 +10,7 @@ require_once __DIR__ . '/db_conn.php';
 $connection = new db_conn();
 
 // get a statement for insert operation
-$stmt = $connect->prepare("insert into user_info(username,password,age,gender,political_status,education_status,career_status,annual_income,social_status,usage_frequency,trust,channel) values (?,?,?,?,?,?,?,?,?,?,?,?)");
+$stmt = $connection->prepare("insert into user_info(username,password,age,gender,political_status,education_status,career_status,annual_income,social_status,usage_frequency,trust,channel) values (?,?,?,?,?,?,?,?,?,?,?,?)");
 
 // bind data to statement
 $stmt->bind_param("s",$_POST['username']);
