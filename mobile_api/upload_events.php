@@ -3,11 +3,13 @@
 * created by Presisco on 2017/5/11
 */
 
+require_once __DIR__ . '/log.php';
+
 // parse jsonarray data
 
 $json_array = file_get_contents("php://input");
 $event_array = json_decode($json_array);
-error_log("received events length: ".count($event_array),3,"/var/log/apache2/php-output.log");
+log("received events length: ".count($event_array));
 
 // include db conn class
 require_once __DIR__ . '/db_conn.php';
@@ -20,7 +22,7 @@ $sql="insert into user_health_event(username,event_type,body_sign,averate_stats,
 
 // add data to prototype
 foreach ($event_array as $event){
-	error_log("event props: ".get_class_vars($event),3,"/var/log/apache2/php-output.log");
+	//log("event props: ".get_class_vars($event));
 	$sql=$sql 
 		. "(" . $event->username
 		. "," . $event->event_type
