@@ -9,8 +9,11 @@ require_once __DIR__ . '/db_conn.php';
 // connecting to db
 $connection = new db_conn();
 
+$sql="insert into user_info(username,password,age,gender,political_status,education_status,career_status,annual_income,social_status,usage_frequency,trust,channel) values (?,?,?,?,?,?,?,?,?,?,?,?)"
 // get a statement for insert operation
-$stmt = $connection->prepare("insert into user_info(username,password,age,gender,political_status,education_status,career_status,annual_income,social_status,usage_frequency,trust,channel) values (?,?,?,?,?,?,?,?,?,?,?,?)");
+if(!($stmt = $connection->prepare($sql))){
+	echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
+}
 
 // bind data to statement
 $stmt->bind_param("s",$_POST['username']);
