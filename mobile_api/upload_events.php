@@ -22,7 +22,7 @@ $sql="insert into user_health_event(username,event_type,body_sign,averate_stats,
 
 // add data to prototype
 foreach ($event_array as $event){
-	log_to_file("event array: ".$event);
+	log_to_file("event var type: ".gettype($event));
 	/*
 	$sql=$sql 
 		. "(" . $event->username
