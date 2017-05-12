@@ -7,7 +7,7 @@
 
 $json_array = file_get_contents("php://input");
 $event_array = json_decode($json_array);
-error_log("received events length: ".count($event_array),3,'/var/log/php_print.log');
+error_log("received events length: ".count($event_array),3);
 
 // include db conn class
 require_once __DIR__ . '/db_conn.php';
