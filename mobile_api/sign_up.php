@@ -4,10 +4,15 @@
 */
  
 // include db conn class
+//require_once __DIR__ . '/db_config.php';
 require_once __DIR__ . '/db_conn.php';
 
 // connecting to db
-$database = new db_conn();
+//$database = new mysqli(DB_SERVER,DB_USER,DB_PASSWORD,DB_DATABASE);
+$database=new db_conn();
+if($database->connect_errno){
+	echo "connect failed";
+}
 
 $sql="insert into user_info(username,password,age,gender,political_status,education_status,career_status,annual_income,social_status,usage_frequency,trust,channel) values (?,?,?,?,?,?,?,?,?,?,?,?)";
 
