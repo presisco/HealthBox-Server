@@ -34,8 +34,8 @@ $sql=substr($sql,0,-1);
 
 // execute insert and return
 if(!$connecting->query($sql){
-	echo "failed"
+	echo "failed";
 }else{
-	echo "succeed"
+	echo "succeed";
 }
 ?>
