@@ -22,7 +22,8 @@ $sql="insert into user_health_event(username,event_type,body_sign,averate_stats,
 
 // add data to prototype
 foreach ($event_array as $event){
-	log_to_file("event props: ".get_object_vars($event));
+	log_to_file("event array: ".$event);
+	/*
 	$sql=$sql 
 		. "(" . $event->username
 		. "," . $event->event_type
@@ -31,6 +32,7 @@ foreach ($event_array as $event){
 		. "," . $event->date
 		. "," . $event->duration
 		. $event->evaluation . "),";
+	*/
 }
 
 // cut the charactor at tail
