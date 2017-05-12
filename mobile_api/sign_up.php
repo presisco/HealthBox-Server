@@ -28,9 +28,9 @@ $stmt->bind_param("i",$_POST['channel']);
 
 // execute statement and return
 if(!$stmt->execute()){
-	echo "failed"
+	echo "failed";
 }else{
-	echo "succeed"
+	echo "succeed";
 }
 
 $stmt->close();
