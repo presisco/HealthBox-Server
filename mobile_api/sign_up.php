@@ -32,4 +32,6 @@ if(!stmt->execute()){
 }else{
 	echo "succeed"
 }
+
+$stmt->close();
 ?>

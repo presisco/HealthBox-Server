@@ -2,27 +2,38 @@
 /*
 * created by Presisco on 2017/5/11
 */
- 
+
+// parse jsonarray data
+
+$json_array = file_get_contents("php://input");
+$event_array = json_decode($json_array);
+
 // include db conn class
 require_once __DIR__ . '/db_conn.php';
 
 // connecting to db
 $connection = new db_conn();
 
-// get a statement for insert operation
-$stmt = $connect->prepare("insert into user_health_event(username,event_type,body_sign,averate_stats,date,duration,evaluation) values (?,?,?,?,?,?,?,?)");
+// define insert prototype
+$sql="insert into user_health_event(username,event_type,body_sign,averate_stats,date,duration,evaluation) values ";
 
-// bind data to statement
-$stmt->bind_param("s",$_POST['username']);
-$stmt->bind_param("s",$_POST['event_type']);
-$stmt->bind_param("s",$_POST['body_sign']);
-$stmt->bind_param("i",$_POST['averate_stats']);
-$stmt->bind_param("s",$_POST['date']);
-$stmt->bind_param("i",$_POST['duration']);
-$stmt->bind_param("s",$_POST['evaluation']);
+// add data to prototype
+foreach ($event_array as $event){
+	$sql=$sql 
+		. "(" . $event["username"]
+		. "," . $event["event_type"]
+		. "," . $event["body_sign"]
+		. "," . $event["averate_stats"]
+		. "," . $event["date"]
+		. "," . $event["duration"]
+		. $event["evaluation"] . "),";
+}
 
-// execute statement and return
-if(!stmt->execute()){
+// cut the charactor at tail
+$sql=substr($sql,0,-1));
+
+// execute insert and return
+if(!$connecting->query($sql){
 	echo "failed"
 }else{
 	echo "succeed"
