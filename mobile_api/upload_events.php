@@ -33,9 +33,10 @@ foreach ($event_array as $event){
 $sql=substr($sql,0,-1);
 
 // execute insert and return
-if(!$connecting->query($sql){
+if(!$connecting->query($sql)){
 	echo "failed";
 }else{
 	echo "succeed";
 }
+
 ?>

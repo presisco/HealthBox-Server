@@ -23,9 +23,9 @@ $result=$database->query($sql);
 
 // compare result
 if($result['password']==$password){
-	return "succeed";
+	echo "succeed";
 }else{
-	return "failed";
+	echo "failed";
 }
 
 ?>
