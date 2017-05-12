@@ -27,10 +27,10 @@ foreach ($event_array as $event){
 		. "('" . $event->username
 		. "','" . $event->event_type
 		. "','" . $event->body_sign
-		. "," . $event->average_stats
+		. "'," . $event->average_stats
 		. "," . $event->date
 		. "," . $event->duration
-		. "','" . $event->evaluation . "'),";
+		. ",'" . $event->evaluation . "'),";
 }
 
 // cut the charactor at tail
