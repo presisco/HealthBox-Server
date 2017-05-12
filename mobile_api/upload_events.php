@@ -28,8 +28,8 @@ foreach ($event_array as $event){
 		. "','" . $event->event_type
 		. "','" . $event->body_sign
 		. "'," . $event->average_stats
-		. "," . $event->date
-		. "," . $event->duration
+		. ",'" . $event->date
+		. "'," . $event->duration
 		. ",'" . $event->evaluation . "'),";
 }
 
