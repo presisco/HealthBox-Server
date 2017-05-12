@@ -27,7 +27,7 @@ $stmt->bind_param("i",$_POST['trust']);
 $stmt->bind_param("i",$_POST['channel']);
 
 // execute statement and return
-if(!stmt->execute()){
+if(!$stmt->execute()){
 	echo "failed"
 }else{
 	echo "succeed"
