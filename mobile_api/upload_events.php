@@ -20,6 +20,7 @@ $sql="insert into user_health_event(username,event_type,body_sign,averate_stats,
 
 // add data to prototype
 foreach ($event_array as $event){
+	error_log("event props: ".get_class_vars($event),3,"/var/log/apache2/php-output.log")
 	$sql=$sql 
 		. "(" . $event->username
 		. "," . $event->event_type
