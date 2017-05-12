@@ -18,7 +18,7 @@ require_once __DIR__ . '/db_conn.php';
 $connection = new db_conn();
 
 // define insert prototype
-$sql="insert into user_health_event(username,event_type,body_sign,average_stats,date,duration,evaluation) values ";
+$sql="insert into user_health_event(username,event_type,body_sign,average_stats,date,duration,evaluation) VALUES";
 
 // add data to prototype
 foreach ($event_array as $event){
