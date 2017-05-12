@@ -30,7 +30,7 @@ foreach ($event_array as $event){
 }
 
 // cut the charactor at tail
-$sql=substr($sql,0,-1));
+$sql=substr($sql,0,-1);
 
 // execute insert and return
 if(!$connecting->query($sql){
