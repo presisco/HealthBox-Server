@@ -7,6 +7,7 @@
 
 $json_array = file_get_contents("php://input");
 $event_array = json_decode($json_array);
+error_log("received events length: ".count($event_array),3,'/var/log/php_print.log');
 
 // include db conn class
 require_once __DIR__ . '/db_conn.php';
@@ -33,7 +34,7 @@ foreach ($event_array as $event){
 $sql=substr($sql,0,-1);
 
 // execute insert and return
-if(!$connecting->query($sql)){
+if(!$connection->query($sql)){
 	echo "failed";
 }else{
 	echo "succeed";
