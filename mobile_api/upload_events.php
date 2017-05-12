@@ -38,6 +38,7 @@ $sql=substr($sql,0,-1);
 
 // execute insert and return
 if(!$connection->query($sql)){
+	log_to_file("mysql insert failed: ".$connection->errno.", detail: ".$connection->error);
 	echo "failed";
 }else{
 	echo "succeed";
