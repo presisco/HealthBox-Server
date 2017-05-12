@@ -9,7 +9,7 @@ require_once __DIR__ . '/log.php';
 
 $json_array = file_get_contents("php://input");
 $event_array = json_decode($json_array);
-log("received events length: ".count($event_array));
+log_to_file("received events length: ".count($event_array));
 
 // include db conn class
 require_once __DIR__ . '/db_conn.php';
@@ -22,7 +22,7 @@ $sql="insert into user_health_event(username,event_type,body_sign,averate_stats,
 
 // add data to prototype
 foreach ($event_array as $event){
-	log("event props: ".get_object_vars($event));
+	log_to_file("event props: ".get_object_vars($event));
 	$sql=$sql 
 		. "(" . $event->username
 		. "," . $event->event_type
