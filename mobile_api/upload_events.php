@@ -20,13 +20,13 @@ $sql="insert into user_health_event(username,event_type,body_sign,averate_stats,
 // add data to prototype
 foreach ($event_array as $event){
 	$sql=$sql 
-		. "(" . $event["username"]
-		. "," . $event["event_type"]
-		. "," . $event["body_sign"]
-		. "," . $event["averate_stats"]
-		. "," . $event["date"]
-		. "," . $event["duration"]
-		. $event["evaluation"] . "),";
+		. "(" . $event->username
+		. "," . $event->event_type
+		. "," . $event->body_sign
+		. "," . $event->averate_stats
+		. "," . $event->date
+		. "," . $event->duration
+		. $event->evaluation . "),";
 }
 
 // cut the charactor at tail
