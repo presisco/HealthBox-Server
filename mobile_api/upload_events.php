@@ -30,7 +30,7 @@ foreach ($event_array as $event){
 		. "," . $event->average_stats
 		. "," . $event->date
 		. "," . $event->duration
-		. $event->evaluation . "),";
+		. "," . $event->evaluation . "),";
 }
 
 // cut the charactor at tail
