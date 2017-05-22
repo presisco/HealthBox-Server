@@ -8,8 +8,8 @@
 require_once __DIR__ . '/db_conn.php';
 
 // get query info
-$start_time=$_POST['start_time']
-$end_time=$_POST['end_time']
+$start_time=$_POST['start_time'];
+$end_time=$_POST['end_time'];
 
 // connecting to db
 // $database = new mysqli(DB_SERVER,DB_USER,DB_PASSWORD,DB_DATABASE);
