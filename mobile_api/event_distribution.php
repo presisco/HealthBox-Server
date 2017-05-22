@@ -28,25 +28,12 @@ if($end_time != null){
 	$sql=$sql." and date < ".$end_time;
 }
 
-// get a statement for insert operation
-$stmt=$database->prepare($sql);
-
 $result=array();
 // bind data to statement
-$stmt->bind_param("s","default");
-$stmt->execute();
-$result["default"]=$stmt->get_result();
-$stmt->bind_param("s","aerobic");
-$stmt->execute();
-$result["aerobic"]=$stmt->get_result();
-$stmt->bind_param("s","anaerobic");
-$stmt->execute();
-$result["anaerobic"]=$stmt->get_result();
-$stmt->bind_param("s","sleep");
-$stmt->execute();
-$result["sleep"]=$stmt->get_result();
-
-$stmt->close();
+$result["default"]=$database->query(str_replace("?","default",$sql));
+$result["aerobic"]=$database->query(str_replace("?","aerobic",$sql));
+$result["anaerobic"]=$database->query(str_replace("?","anaerobic",$sql));
+$result["sleep"]=$database->query(str_replace("?","sleep",$sql));
 
 echo json_encode($response)
 
