@@ -21,11 +21,11 @@ if($database->connect_errno){
 $sql="select count(*) from user_health_event where event_type = ?";
 
 if($start_time != null){
-	$sql=$sql." and start_time > ".$start_time
+	$sql=$sql." and start_time > ".$start_time;
 }
 
 if($end_time != null){
-	$sql=$sql." and start_time < ".$end_time
+	$sql=$sql." and start_time < ".$end_time;
 }
 
 // get a statement for insert operation
