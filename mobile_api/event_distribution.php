@@ -35,6 +35,6 @@ $result["aerobic"]=$database->query(str_replace("?","aerobic",$sql));
 $result["anaerobic"]=$database->query(str_replace("?","anaerobic",$sql));
 $result["sleep"]=$database->query(str_replace("?","sleep",$sql));
 
-echo json_encode(result)
+echo json_encode($result)
 
 ?>
