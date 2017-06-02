@@ -3,9 +3,14 @@
 * created by Presisco on 2017/5/12
 */
 
+require_once __DIR__ . '/log.php';
+
 // get input data
 $username=$_POST['username'];
 $password=$_POST['password'];
+
+log_to_file("has login");
+log_to_file("password: $password, username: $username");
  
 // include db conn class
 require_once __DIR__ . '/db_conn.php';
@@ -17,12 +22,13 @@ if($database->connect_errno){
 }
 
 // query the password
-$sql="select password from user_info where username=".$username;
+$sql="select password from user_info where username='$username'";
 
 $result=$database->query($sql);
-
+$row=$result->fetch_assoc();
+log_to_file("password for $username: ".$row['password']);
 // compare result
-if($result['password']==$password){
+if($row['password']==$password){
 	echo "succeed";
 }else{
 	echo "failed";
