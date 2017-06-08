@@ -22,14 +22,15 @@ if($database->connect_errno){
 }
 
 // query the password
-$sql="select password from user_info where username='$username'";
+$sql="select password,age from user_info where username='$username'";
 
 $result=$database->query($sql);
 $row=$result->fetch_assoc();
+
 log_to_file("password for $username: ".$row['password']);
 // compare result
 if($row['password']==$password){
-	echo "succeed";
+	echo $row['age'];
 }else{
 	echo "failed";
 }

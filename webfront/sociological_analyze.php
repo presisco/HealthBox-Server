@@ -66,7 +66,11 @@ if($database->connect_errno){
             <div class="card-panel text-center">
               <h1>算法描述</h1><br />
 
-              <p>asdfasldkjalksdjgl asdjlgj</p>
+              <p>logistic回归分析，是一种广义的线性回归分析模型，常用于数据挖掘，疾病自动诊断，经济预测等领域。</p>
+			  <p>例如，探讨引发疾病的危险因素，并根据危险因素预测疾病发生的概率等。</p>
+			  <p>以胃癌病情分析为例，选择两组人群，一组是胃癌组，一组是非胃癌组，两组人群必定具有不同的体征与生活方式等。</p>
+			  <p>因此因变量就为是否胃癌，值为“是”或“否”，自变量就可以包括很多了，如年龄、性别、饮食习惯、幽门螺杆菌感染等。</p>
+			  <p>自变量既可以是连续的，也可以是分类的。然后通过logistic回归分析，可以得到自变量的权重，从而可以大致了解到底哪些因素是胃癌的危险因素。同时根据该权值可以根据危险因素预测一个人患癌症的可能性。</p>
             </div>
           </div>
         </div>
@@ -126,7 +130,8 @@ if($database->connect_errno){
             <div class="card-panel text-center">
               <h1>数据分析</h1><br />
 
-              <p>asdfasldkjalksdjgl asdjlgj</p>
+              <p>研究结果为：</p>
+			  <p>用户受教育水平与信任程度成正相关，信任系数为1.7。</p>
             </div>
           </div>
         </div>

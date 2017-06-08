@@ -68,13 +68,24 @@ if($database->connect_errno){
             <div class="card-panel text-center">
               <h1>算法描述</h1><br />
 
-              <p>asdfasldkjalksdjgl asdjlgj</p>
+				<p>有氧运动心率计算公式</p>
+				<p>初级公式：针对健康状况较差的人群。</p> 
+				<p>目标心率=（200-年龄）*（60%~80%） </p>
+				<p>60%~70%主要用于减脂；70%~80%主要用于提高心肺功能 </p>
+				<p>普通公式：针对普通人群。 </p>
+				<p>目标心率=（220-年龄）*（60%~80%） </p>
+				<p>60%~70%主要用于减脂；70%~80%主要用于提高心肺功能 </p>
+				<p>卡福能公式：针对身体素质较高的人群。 </p>
+				<p>目标心率=（220-年龄-静止心率）*（65%~85%）+静止心率 </p>
+				<p>65%~75%主要用于减脂；75%~85%主要用于提高心肺功能</p>
+
+
             </div>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-md-3 col-sm-12 col-xs-12">
+          <div class="col-md-4 col-sm-12 col-xs-12">
             <div class="card">
               <div class="card-image">
                 <div id="gender-donut-chart"></div>
@@ -86,7 +97,7 @@ if($database->connect_errno){
             </div>
           </div>
 
-          <div class="col-md-3 col-sm-12 col-xs-12">
+          <div class="col-md-4 col-sm-12 col-xs-12">
             <div class="card">
               <div class="card-image">
                 <div id="heart-rate-donut-chart"></div>
@@ -98,7 +109,7 @@ if($database->connect_errno){
             </div>
           </div>
 		  
-		  <div class="col-md-3 col-sm-12 col-xs-12">
+		  <div class="col-md-4 col-sm-12 col-xs-12">
             <div class="card">
               <div class="card-image">
                 <div id="spo2h-donut-chart"></div>
@@ -116,7 +127,8 @@ if($database->connect_errno){
             <div class="card-panel text-center">
               <h1>数据分析</h1><br />
 
-              <p>asdfasldkjalksdjgl asdjlgj</p>
+              <p>分析结果</p>
+			  <p>我国25岁以上公民普遍缺乏良好的运动锻炼习惯</p>
             </div>
           </div>
         </div>
